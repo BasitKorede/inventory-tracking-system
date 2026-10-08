@@ -1,0 +1,8 @@
+digraph{rankdir=LR;graph [dpi=200 fontname="Liberation Serif" pad=0.2]; node [fontname="Liberation Serif" fontsize=12 style=filled fillcolor="#eef3fa" color="#14365d"]; edge [fontname="Liberation Serif" fontsize=10 color="#14365d"];
+sys[label="0\nInventory\nTracking\nSystem",shape=circle,fillcolor="#fff4d6"]
+node[shape=box]
+sup[label="Supplier"];sk[label="Store keeper"];ad[label="Administrator"];mg[label="Management"]
+sup->sk[label="delivery note",style=dotted,arrowhead=none]
+sk->sys[label="receipts, issues,\nproduction records"];sys->sk[label="balances, confirmations,\nerror messages"]
+ad->sys[label="item, supplier, BOM,\nuser data"];sys->ad[label="master-data\nconfirmation"]
+sys->mg[label="alerts, valuation,\nledger, CSV reports"]}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block body %}<h1>Dashboard</h1>
+<div class="cards"><div class="card">Items tracked<b>{{ n_items }}</b></div>
+<div class="card">Stock value (NGN)<b>{{ '{:,.0f}'.format(value) }}</b></div>
+<div class="card">Items at/below reorder level<b class="{{ 'low' if low }}">{{ low|length }}</b></div></div>
+<h1>Reorder alerts</h1><table><tr><th>SKU</th><th>Item</th><th>On hand</th><th>Reorder level</th></tr>
+{% for i in low %}<tr><td>{{i.sku}}</td><td>{{i.name}}</td><td class="low">{{ i.qty }} {{i.unit}}</td><td>{{i.reorder_level}}</td></tr>
+{% else %}<tr><td colspan="4">No alerts.</td></tr>{% endfor %}</table>
+<h1>Recent transactions</h1><table><tr><th>Time</th><th>Item</th><th>Type</th><th>Qty</th><th>Balance</th></tr>
+{% for r in recent %}<tr><td>{{r.ts}}</td><td>{{r.name}}</td><td>{{r.type}}</td><td>{{r.qty}}</td><td>{{r.balance_after}}</td></tr>{% endfor %}</table>{% endblock %}

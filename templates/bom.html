@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block body %}<h1>Bill of materials</h1>
+<table><tr><th>Product</th><th>Material</th><th>Quantity per unit</th></tr>{% for r in rows %}<tr><td>{{r.product}}</td><td>{{r.material}}</td><td>{{r.qty_per_unit}} {{r.unit}}</td></tr>{% endfor %}</table>
+<form class="box" method="post"><label>Finished product</label><select name="product_id">{% for p in products %}<option value="{{p.id}}">{{p.name}}</option>{% endfor %}</select>
+<label>Raw material</label><select name="material_id">{% for m in materials %}<option value="{{m.id}}">{{m.name}}</option>{% endfor %}</select>
+<label>Quantity per unit</label><input name="qty_per_unit" type="number" step="any" required><button>Save line</button></form>{% endblock %}

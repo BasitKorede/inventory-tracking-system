@@ -1,0 +1,5 @@
+digraph{rankdir=TB;graph [dpi=200 fontname="Liberation Serif" pad=0.2 nodesep=0.5]; node [fontname="Liberation Serif" fontsize=12 style=filled fillcolor="#eef3fa" color="#14365d"]; edge [fontname="Liberation Serif" fontsize=10 color="#14365d"]; node[shape=box]
+S[label="Suppliers"];RM[label="Raw material\ninventory",shape=box3d];WIP[label="Work-in-process\ninventory",shape=box3d];FG[label="Finished goods\ninventory",shape=box3d];C[label="Customers /\nDepartments"];
+P1[label="Production\nprocess 1",shape=ellipse,fillcolor="#fff4d6"];P2[label="Production\nprocess 2",shape=ellipse,fillcolor="#fff4d6"]
+{rank=same;S;RM;P1}{rank=same;WIP;P2}{rank=same;FG;C}
+S->RM[label="purchase"];RM->P1[label="issue"];P1->WIP;WIP->P2;P2->FG[label="complete"];FG->C[label="sale / issue"]}

@@ -1,0 +1,7 @@
+digraph{rankdir=LR;graph [dpi=200 fontname="Liberation Serif" pad=0.2]; node [fontname="Liberation Serif" fontsize=12 style=filled fillcolor="#eef3fa" color="#14365d"]; edge [fontname="Liberation Serif" fontsize=10 color="#14365d"];
+A1[label="Administrator",shape=box,fillcolor="#fff4d6"];A2[label="Store keeper",shape=box,fillcolor="#fff4d6"];A3[label="Viewer / Manager",shape=box,fillcolor="#fff4d6"]
+node[shape=ellipse]
+u1[label="Log in / out"];u2[label="Manage items\nand suppliers"];u3[label="Define bill of\nmaterials"];u4[label="Receive stock"];u5[label="Issue stock"];u6[label="Record production run"];u7[label="Adjust stock\n(count)"];u8[label="View dashboard\nand alerts"];u9[label="View ledger"];u10[label="Generate / export\nreports"]
+A1->u1;A1->u2;A1->u3;A1->u7;A1->u10
+A2->u1;A2->u4;A2->u5;A2->u6;A2->u8;A2->u9
+A3->u1;A3->u8;A3->u9;A3->u10}

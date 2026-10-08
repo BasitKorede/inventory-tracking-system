@@ -1,0 +1,5 @@
+digraph{rankdir=TB;graph [dpi=200 fontname="Liberation Serif" pad=0.2]; node [fontname="Liberation Serif" fontsize=12 style=filled fillcolor="#eef3fa" color="#14365d"]; edge [fontname="Liberation Serif" fontsize=10 color="#14365d"]; node[shape=box]
+subgraph cluster0{label="Presentation tier";style=dashed;u[label="Web browser (HTML, CSS)\nDashboard, forms, reports"]}
+subgraph cluster1{label="Application tier (Flask)";style=dashed;r[label="Routes and\naccess control"];l[label="Business logic module\n(inventory.py)"];s[label="Session and\nauthentication"]}
+subgraph cluster2{label="Data tier";style=dashed;db[label="SQLite database\nusers, items, suppliers,\nbom, transactions",shape=cylinder]}
+u->r[label="HTTP request"];r->u[label="HTML response"];r->s;r->l;l->db[label="SQL"];db->l}

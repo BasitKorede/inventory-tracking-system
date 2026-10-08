@@ -1,0 +1,5 @@
+digraph{rankdir=TB;graph [dpi=200 fontname="Liberation Serif" pad=0.2]; node [fontname="Liberation Serif" fontsize=12 style=filled fillcolor="#eef3fa" color="#14365d"]; edge [fontname="Liberation Serif" fontsize=10 color="#14365d"]; node[shape=box]
+subgraph cluster0{label="Inputs";style=dashed;margin=18;a[label="Goods received\n(purchases)"];b[label="Production output"];c[label="Stock counts"]}
+subgraph cluster1{label="Inventory Tracking System";style=dashed;margin=18;d[label="Central stock database"];e[label="Business rules\n(no negative stock,\nBOM deduction)"];f[label="Reorder-level monitor"]}
+subgraph cluster2{label="Outputs";style=dashed;margin=18;g[label="Real-time stock balances"];h[label="Reorder alerts"];i[label="Ledger and audit trail"];j[label="Valuation reports"]}
+a->e;b->e;c->e;e->d;d->f;d->g;f->h;d->i;d->j}

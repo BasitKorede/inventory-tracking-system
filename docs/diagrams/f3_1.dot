@@ -1,0 +1,4 @@
+digraph{rankdir=TB;graph [dpi=200 fontname="Liberation Serif" pad=0.2 nodesep=0.5]; node [fontname="Liberation Serif" fontsize=12 style=filled fillcolor="#eef3fa" color="#14365d"]; edge [fontname="Liberation Serif" fontsize=10 color="#14365d"]; node[shape=box]
+a[label="Requirements\ngathering"];b[label="Analysis and\nquick design"];c[label="Build\nprototype"];d[label="Evaluate /\ntest"];e[label="Refine\nsystem"];f[label="Final system\nand deployment",fillcolor="#dff3e3"]
+{rank=same;a;b;c}{rank=same;d;e;f}
+a->b->c;c->d;d->e;e->b[label="next iteration",style=dashed,constraint=false];e->f}

@@ -1,0 +1,7 @@
+digraph{rankdir=TB;graph [dpi=200 fontname="Liberation Serif" pad=0.2]; node [fontname="Liberation Serif" fontsize=12 style=filled fillcolor="#eef3fa" color="#14365d"]; edge [fontname="Liberation Serif" fontsize=10 color="#14365d"]; node[shape=box]
+s[label="Start",shape=ellipse];i[label="Select finished product\nand enter units produced",shape=parallelogram];
+v[label="Units > 0?",shape=diamond,fillcolor="#fff4d6"];b[label="BOM defined?",shape=diamond,fillcolor="#fff4d6"];
+t[label="Sufficient stock of\nevery material?",shape=diamond,fillcolor="#fff4d6"];
+d[label="Deduct materials\n(PRODUCTION_USE)"];a[label="Add finished goods\n(PRODUCTION_OUTPUT)"];c[label="Commit transaction;\nupdate ledger"];
+e[label="Reject; roll back;\nshow error message",fillcolor="#fbe0de"];x[label="End",shape=ellipse]
+s->i->v;v->b[label="Yes"];v->e[label="No"];b->t[label="Yes"];b->e[label="No"];t->d[label="Yes"];t->e[label="No"];d->a->c->x;e->x}

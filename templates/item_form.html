@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block body %}<h1>New item</h1><form class="box" method="post">
+<label>SKU</label><input name="sku" required><label>Name</label><input name="name" required>
+<label>Category</label><select name="category"><option>Raw Material</option><option>Finished Good</option></select>
+<label>Unit</label><input name="unit" value="pcs"><label>Reorder level</label><input name="reorder_level" type="number" step="any" value="0">
+<label>Unit cost (NGN)</label><input name="unit_cost" type="number" step="any" value="0"><label>Location</label><input name="location">
+<button>Save</button></form>{% endblock %}

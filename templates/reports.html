@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block body %}<h1>Reports</h1>
+<p>Total stock valuation: <b>NGN {{ '{:,.2f}'.format(value) }}</b> &nbsp; <a href="/reports/stock.csv">Download stock report (CSV)</a></p>
+<h1>Items to reorder</h1><table><tr><th>SKU</th><th>Item</th><th>On hand</th><th>Reorder level</th></tr>
+{% for i in low %}<tr><td>{{i.sku}}</td><td>{{i.name}}</td><td class="low">{{i.qty}} {{i.unit}}</td><td>{{i.reorder_level}}</td></tr>{% else %}<tr><td colspan="4">None.</td></tr>{% endfor %}</table>{% endblock %}

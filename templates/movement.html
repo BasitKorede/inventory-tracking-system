@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block body %}<h1>{{ 'Receive stock (goods received note)' if kind=='receive' else 'Issue stock' }}</h1>
+<form class="box" method="post"><label>Item</label><select name="item_id">{% for i in items %}<option value="{{i.id}}">{{i.sku}} - {{i.name}} ({{i.qty}} {{i.unit}})</option>{% endfor %}</select>
+{% if kind=='receive' %}<label>Supplier</label><select name="supplier_id"><option value="">--</option>{% for s in suppliers %}<option value="{{s.id}}">{{s.name}}</option>{% endfor %}</select>{% endif %}
+<label>Quantity</label><input name="qty" type="number" step="any" required><label>Reference</label><input name="reference">
+<button>Record</button></form>{% endblock %}

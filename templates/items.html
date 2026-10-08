@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block body %}<h1>Items</h1>
+{% if session.role=='admin' %}<p><a href="/items/new">+ Add item</a></p>{% endif %}
+<table><tr><th>SKU</th><th>Name</th><th>Category</th><th>Location</th><th>On hand</th><th>Reorder</th><th>Unit cost</th></tr>
+{% for i in items %}<tr><td>{{i.sku}}</td><td>{{i.name}}</td><td>{{i.category}}</td><td>{{i.location}}</td>
+<td class="{{ 'low' if i.qty<=i.reorder_level }}">{{ i.qty }} {{i.unit}}</td><td>{{i.reorder_level}}</td><td>{{ '{:,.2f}'.format(i.unit_cost) }}</td></tr>{% endfor %}</table>{% endblock %}

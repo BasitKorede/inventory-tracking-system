@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><title>ITS</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<nav><span class="brand">Inventory Tracking System</span>
+{% if session.uid %}<a href="/">Dashboard</a><a href="/items">Items</a>
+{% if session.role in ['admin','storekeeper'] %}<a href="/receive">Receive</a><a href="/issue">Issue</a><a href="/production">Production</a>{% endif %}
+{% if session.role=='admin' %}<a href="/adjust">Adjust</a><a href="/bom">BOM</a><a href="/suppliers">Suppliers</a>{% endif %}<a href="/ledger">Ledger</a><a href="/reports">Reports</a><span class="sp"></span>
+<span style="font-size:13px">{{ session.user }} ({{ session.role }})</span><a href="/logout">Logout</a>{% endif %}</nav>
+<main>{% with m = get_flashed_messages(with_categories=true) %}{% for c,t in m %}<div class="flash {{c}}">{{t}}</div>{% endfor %}{% endwith %}
+{% block body %}{% endblock %}</main></body></html>

@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block body %}<h1>Stock ledger</h1><table><tr><th>#</th><th>Time</th><th>SKU</th><th>Item</th><th>Type</th><th>Qty</th><th>Balance</th><th>Ref.</th><th>User</th></tr>
+{% for r in rows %}<tr><td>{{r.id}}</td><td>{{r.ts}}</td><td>{{r.sku}}</td><td>{{r.name}}</td><td>{{r.type}}</td><td>{{r.qty}}</td><td>{{r.balance_after}}</td><td>{{r.reference}}</td><td>{{r.username}}</td></tr>{% endfor %}</table>{% endblock %}

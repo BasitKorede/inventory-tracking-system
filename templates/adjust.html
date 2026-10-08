@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block body %}<h1>Stock adjustment (physical count)</h1><form class="box" method="post">
+<label>Item</label><select name="item_id">{% for i in items %}<option value="{{i.id}}">{{i.sku}} - {{i.name}} (book: {{i.qty}} {{i.unit}})</option>{% endfor %}</select>
+<label>Counted quantity</label><input name="counted" type="number" step="any" required><label>Reference</label><input name="reference" value="Stock count">
+<button>Adjust</button></form>{% endblock %}

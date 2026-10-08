@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block body %}<h1>Record production run</h1><form class="box" method="post">
+<label>Finished product</label><select name="product_id">{% for p in products %}<option value="{{p.id}}">{{p.sku}} - {{p.name}}</option>{% endfor %}</select>
+<label>Units produced</label><input name="units" type="number" step="any" required><label>Production order ref.</label><input name="reference">
+<button>Record</button></form>{% endblock %}
