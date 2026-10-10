@@ -16,6 +16,7 @@ stock can never go negative; reorder alerts and valuation reports are generated 
 | Quadir Baniameen O. | E051579 | Systems Analyst and Database Designer |
 | Muhammed Nofisat | E051052 | Documentation and Literature Lead |
 | Abia Gift Morris | E050899 | Front-end Developer and Quality Assurance (testing) |
+| Abdulmuiz Shodamola Oladimeji | E051571 | Validation and Data Coordinator |
 
 ## Features
 - Role-based access: administrator, store keeper, viewer
@@ -55,3 +56,5 @@ Python 3, Flask, SQLite, HTML/CSS. All free and open source.
 
 ## Licence
 MIT — see `LICENSE`.
+
+Supervisor: Prof. B. Oladejo, Department of Computer Science, University of Ibadan.
